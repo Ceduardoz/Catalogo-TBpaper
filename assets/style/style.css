@@ -1,0 +1,349 @@
+@font-face {
+    font-family: 'KGPerfectPenmanship';
+    src: url(/assets/fonts/KGPerfectPenmanship.otf) format(opentype), url(/assets/fonts/KGPerfectPenmanship.ttf) format(truetype);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root{
+    --color1--: #ccb1db;
+    --color2--: #b410b9;
+    --color3--: #faf6d4;
+
+    --font-main--: 'KGPerfectPenmanship';
+}
+
+body{
+    background-color: var(--color1--);
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    background-color: var(--color1--);
+    padding: 20px;
+    z-index: 1000;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    cursor: pointer; 
+}
+
+.navbar ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar li{
+    padding: 0px 15px;
+    list-style: none;
+}
+
+.navbar button {
+    background-color: transparent;
+    border: none;
+    position: relative;
+    display: inline-block;
+    color: var(--color2--);
+    text-decoration: none;
+    font-size: 20px;
+    padding-top: 20px;
+    font: normal bold 1.2em var(--font-main--);
+    text-decoration: none;
+}
+
+.navbar button:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--color2--);
+    transition: width 0.3s ease;
+}
+.navbar button:hover::after{
+    width: 100%
+}
+
+.section-panel{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--color1--);
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 100px; 
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.section-panel .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color3--);
+    width: 320px;
+    height: 350px;
+    border-radius: 50% 50% 0 0;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    gap: 15px;
+}
+
+.section-panel .card img {
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+}
+
+.section-panel .card button {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--color2--);
+    color: var(--color3--);
+    font-family: var(--font-main--);
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.section-panel .card button:hover {
+    background-color: var(--color2--);
+    color: var(--color2--);
+}
+
+.image-section {
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    background-color: var(--color1--);
+}
+
+.image-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 250px;
+}
+
+.image-item img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.image-item p {
+    margin-top: 8px;
+    font-size: 0.95rem;
+    color: var(--color3--);
+}
+
+.contact {
+    background-color: var(--color5--);
+    padding: 40px 20px;
+    text-align: center;
+    font-family: var(--font-main--);
+    color: var(--color3--);
+}
+
+.contact h2 {
+    margin-bottom: 15px;
+    color: var(--color3--);
+}
+
+.contact label {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: var(--color2--);
+    font: normal bold 1.2em var(--font-main--);
+}
+
+.contact input {
+    margin: 15px 20px;
+    padding: 10px;
+    font-size: 1em;
+    width: 250px;
+    max-width: 90%;
+    border: 2px solid var(--color1--);
+    color: var(--color2--);
+    font-weight: bold;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact input:focus {
+    border-color: var(--color2--);
+}
+
+.contact button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #25D366;
+    border: none;
+    color: white;
+    margin: 10px 0 20px 0;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #1ebe5c;
+}
+
+.whatsapp-logo-btn {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.contact .attention {
+    margin-top: 15px;
+    font-size: 0.95em;
+    color: #ffd700;
+    font-weight: 600;
+}
+
+footer{
+    text-align: center;
+    font-size: 1.1em;
+    color: var(--color3--);
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    header {
+        justify-content: center; 
+        padding: 10px 20px;
+    }
+
+    
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background-color: var(--color2--);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 20px 0;
+        z-index: 999;
+    }
+
+    
+    .navbar.active {
+        display: flex; 
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar li {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .navbar a {
+        font-size: 20px;
+        padding: 10px 0;
+        display: block;
+    }
+
+    .section-panel {
+        padding-top: 130px; 
+        flex-direction: column;
+        height: auto;
+    }
+
+    .section-panel .card {
+        width: 280px;
+        max-width: 300px;
+        height: auto;
+        padding: 15px;
+    }
+
+    .section-panel .card img {
+        width: 120px;
+    }
+
+    .image-section {
+        padding: 20px 10px;
+    }
+
+    .image-item {
+        max-width: 180px;
+    }
+
+    .image-item p {
+        font-size: 0.85rem;
+    }
+
+    .contact h2 {
+        font-size: 1.5em;
+    }
+
+    .contact label {
+        font-size: 1em;
+    }
+
+    .contact input {
+        width: 80%;
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .navbar {
+        top: 80px; 
+    }
+
+    .navbar a {
+        font-size: 18px;
+    }
+
+    .section-panel {
+        padding-top: 80px; 
+    }
+
+    .section-panel .card{
+        width: 250px;
+        height: 280px;
+        padding: 10px;
+    }
+
+    .section-panel .card img {
+        width: 100px;
+    }
+}
