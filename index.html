@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <img src="assets/img/LOGO.png" alt="logo" class="logo">
+        <a href="index.html"><img src="assets/img/LOGO.png" alt="logo" class="logo"></a>
         <nav class="navbar" id="main-navbar">
             <ul>
                 <li><button onclick="selectButton(0)">Agenda</button></li>
@@ -20,38 +20,48 @@
         </nav>
     </header>
     <main>
-        <section>
-            <section class="section-panel">
-                <div class="card">
-                    <img src="assets/img/LOGO.png" alt="ImagemAgenda">
-                    <button onclick="selectButton(0)">Agenda</button>
+        <div class="carousel">
+            <div class="carousel-track">
+                <div class="slide active">
+                    <img src="assets/img/Slide01.jpg" alt="Imagem 1">
                 </div>
-                <div class="card">
-                    <img src="assets/img/LOGO.png" alt="ImagemAgenda">
-                    <button onclick="selectButton(1)">Caderneta</button>
+                <div class="slide">
+                    <img src="assets/img/Slide02.jpg" alt="Imagem 2">
                 </div>
-                <div class="card">
-                    <img src="assets/img/LOGO.png" alt="ImagemAgenda">
-                    <button onclick="selectButton(2)">Planner</button>
+                <div class="slide">
+                    <img src="assets/img/Slide03.jpg" alt="Imagem 3">
                 </div>
-                <div class="card">
-                    <img src="assets/img/LOGO.png" alt="ImagemAgenda">
-                    <button onclick="selectButton(3)">Kit bebê</button>
+                <div class="slide">
+                    <img src="assets/img/Agenda005.jpg" alt="Imagem 4">
                 </div>
-            </section>
+            </div>
+        </div>
+
+        <section class="section-panel">
+            <div class="card">
+                <img src="assets/img/LOGO.png" alt="ImagemAgenda">
+                <button onclick="selectButton(0)">Agenda</button>
+            </div>
+            <div class="card">
+                <img src="assets/img/LOGO.png" alt="ImagemAgenda">
+                <button onclick="selectButton(1)">Caderneta</button>
+            </div>
+            <div class="card">
+                <img src="assets/img/LOGO.png" alt="ImagemAgenda">
+                <button onclick="selectButton(2)">Planner</button>
+            </div>
+            <div class="card">
+                <img src="assets/img/LOGO.png" alt="ImagemAgenda">
+                <button onclick="selectButton(3)">Kit bebê</button>
+            </div>
         </section>
+
         <section class="image-section">
             <!--Gerado pelo JS-->
         </section>
+        
         <section class="contact">
-            <h2>Contato via WhatsApp</h2>
-            <label for="codigoPedido">Digite o código do pedido:</label><br>
-            <input type="text" id="codigoPedido" placeholder="Ex: 01, 02, 03" autocomplete="off"> <br>
-            <button id="btnWhats">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="whatsapp-logo-btn">
-                Saber mais
-            </button>
-            <p class="attention">⚠️ Envie o código do produto escolhido para agilizar o atendimento!</p>
+            <!--Gerado pelo JS-->
         </section>
     </main>
     <footer>
