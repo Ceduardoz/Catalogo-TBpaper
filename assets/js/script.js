@@ -3,31 +3,24 @@ const contact = document.querySelector('.contact');
 carousel();
 const imageCards = [
     [   // Agendas
-        {src: "/assets/img/Agenda001.jpg", code: "Agenda-001"},
-        {src: "/assets/img/Agenda002.jpg", code: "Agenda-002"},
-        {src: "/assets/img/Agenda003.jpg", code: "Agenda-003"},
-        {src: "/assets/img/Agenda004.jpg", code: "Agenda-004"},
-        {src: "/assets/img/Agenda005.jpg", code: "Agenda-005"},
-        {src: "/assets/img/Agenda006.jpg", code: "Agenda-006"},
-        {src: "/assets/img/Agenda007.jpg", code: "Agenda-007"},
-        {src: "/assets/img/Agenda008.jpg", code: "Agenda-008"},
-        {src: "/assets/img/Agenda009.jpg", code: "Agenda-009"},
-        {src: "/assets/img/Agenda010.jpg", code: "Agenda-010"},
+        {src: "/assets/img/TesteOtimizaçao.jpg", code: "Agenda-001"},
+        {src: "/assets/img/TesteOtimizaçao.jpg", code: "Agenda-002"},
+        {src: "/assets/img/TesteOtimizaçao.jpg", code: "Agenda-003"},
     ],
     [   // Caderneta
-        {src: "/assets/img/Caderneta001.jpg", code: "Caderneta-001"},
-        {src: "/assets/img/Caderneta002.jpg", code: "Caderneta-002"},
-        {src: "/assets/img/Caderneta003.jpg", code: "Caderneta-003"},
+        {src: "/assets/img/TesteOtimizaçao.jpg", code: "Caderneta-001"},
+        {src: "/assets/img/TesteOtimizaçao.jpg", code: "Caderneta-002"},
+        {src: "/assets/img/TesteOtimizaçao.jpg", code: "Caderneta-003"},
     ],
     [   // Planner
-        {src: "/assets/img/Planner001.jpg", code: "Planner-001"},
-        {src: "/assets/img/Planner002.jpg", code: "Planner-002"},
-        {src: "/assets/img/Planner003.jpg", code: "Planner-003"},
+        {src: "/assets/img/TesteOtimizaçao.jpg", code: "Planner-001"},
+        {src: "/assets/img/TesteOtimizaçao.jpg", code: "Planner-002"},
+        {src: "/assets/img/TesteOtimizaçao.jpg", code: "Planner-003"},
     ],
     [    // Kit Bebê
-        {src: "/assets/img/KitBebê004.jpg", code: "KitBebê-004"},
-        {src: "/assets/img/KitBebê005.jpg", code: "KitBebê-005"},
-        {src: "/assets/img/KitBebê006.jpg", code: "KitBebê-006"},
+        {src: "/assets/img/TesteOtimizaçao.jpg", code: "KitBebê-004"},
+        {src: "/assets/img/TesteOtimizaçao.jpg", code: "KitBebê-005"},
+        {src: "/assets/img/TesteOtimizaçao.jpg", code: "KitBebê-006"},
     ]
 ];
 
@@ -95,11 +88,12 @@ function contactForms(index){
                 <label for="pagamento">Pagamento:</label>
                 <input type="text" id="pagamento" placeholder="Ex: Dinheiro, cartão, pix" autocomplete="off"> 
 
+                <p class="attention">⚠️ Envie o código do produto escolhido para agilizar o atendimento!</p>
+
                 <button id="btnWhats">
                     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="whatsapp-logo-btn">
                     Saber mais
                 </button>
-                <p class="attention">⚠️ Envie o código do produto escolhido para agilizar o atendimento!</p>
             </div>`;
     } else if (index === 1) {
         contact.innerHTML = `
@@ -115,13 +109,14 @@ function contactForms(index){
                 <input type="text" id="personalizacao" placeholder="Ex: Nome da personalização" autocomplete="off"> 
 
                 <label for="pagamento">Pagamento:</label>
-                <input type="text" id="pagamento" placeholder="Ex: Dinheiro, cartão, pix" autocomplete="off"> 
+                <input type="text" id="pagamento" placeholder="Ex: Dinheiro, cartão, pix" autocomplete="off">
+
+                <p class="attention">⚠️ Envie o código do produto escolhido para agilizar o atendimento!</p>
 
                 <button id="btnWhats">
                     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="whatsapp-logo-btn">
                     Saber mais
                 </button>
-                <p class="attention">⚠️ Envie o código do produto escolhido para agilizar o atendimento!</p>
             </div>`;
     } else if (index === 2) {
         contact.innerHTML = `
@@ -139,11 +134,12 @@ function contactForms(index){
                 <label for="pagamento">Pagamento:</label>
                 <input type="text" id="pagamento" placeholder="Ex: Dinheiro, cartão, pix" autocomplete="off"> 
 
+                <p class="attention">⚠️ Envie o código do produto escolhido para agilizar o atendimento!</p>
+
                 <button id="btnWhats">
                     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="whatsapp-logo-btn">
                     Saber mais
                 </button>
-                <p class="attention">⚠️ Envie o código do produto escolhido para agilizar o atendimento!</p>
             </div>`;
     } else if (index === 3) {
         contact.innerHTML = `
@@ -161,12 +157,13 @@ function contactForms(index){
 
                 <label for="Pagamento">Pagamento:</label>
                 <input type="text" id="pagamento" placeholder="Ex: Dinheiro, cartão, pix" autocomplete="off"> 
-
+                
+                <p class="attention">⚠️ Envie o código do produto escolhido para agilizar o atendimento!</p>
+                
                 <button id="btnWhats">
                     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="whatsapp-logo-btn">
                     Saber mais
                 </button>
-                <p class="attention">⚠️ Envie o código do produto escolhido para agilizar o atendimento!</p>
             </div>`;
         }
 

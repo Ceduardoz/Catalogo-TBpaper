@@ -227,13 +227,14 @@ header{
     background-color: #25D366;
     border: none;
     color: white;
-    margin: 10px 0 20px 0;
-    padding: 12px 20px;
+    margin: 10px 0px 20px 0px;
+    padding: 12px 15px;
     font-size: 1.1em;
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    max-width: 350px;
 }
 
 .contact button:hover {
