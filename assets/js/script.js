@@ -1,6 +1,9 @@
 const imageSection = document.querySelector('.image-section');
 const contact = document.querySelector('.contact');
+
 carousel();
+
+// Arrays das imagens 
 const imageCards = [
     [   // Agendas
         {src: "/assets/img/TesteOtimizaçao.jpg", code: "Agenda-001"},
@@ -24,6 +27,7 @@ const imageCards = [
     ]
 ];
 
+// Carrossel automatico das imagens
 function carousel(){
     const track = document.querySelector('.carousel-track');
     const slides = document.querySelectorAll('.slide');
@@ -35,21 +39,26 @@ function carousel(){
     }, 3000);
 }
 
+//Seleciona botão das categorias
 function selectButton(index) {
     currentButton = index;
-    scrollToImages();
-    loadImages(currentButton);
-    contactForms(currentButton);
+
+    scrollToImages();            // Rola até a section das imagens
+    loadImages(currentButton);   // Carrega as imagens por Lazyloading
+    contactForms(currentButton); // Formulário Personalizado
 }
 
+// Rolagem mais suave
 function scrollToImages(){
     imageSection.scrollIntoView({behavior: 'smooth'});
 }
 
+// Carrega as imagems pelo indice das categorias
 function loadImages(index){
     imageSection.innerHTML = " ";
     const images = imageCards[index] || [];
 
+    // Criação da div de cada imagem
     images.forEach(({src, code}) => {
         const container = document.createElement('div');
         container.classList.add('image-item');
@@ -68,145 +77,83 @@ function loadImages(index){
     });
 }
 
+// Formulário personalizado de acordo com a categoria
 function contactForms(index){
-    if (index === 0) {
-        contact.innerHTML = `
-            <h2>Contato via WhatsApp</h2>
-            <div class="form-grid">
-                <label for="nomeCliente">Nome:</label>
-                <input type="text" id="nomeCliente" placeholder="Ex: Nome do cliente" autocomplete="off"> 
+    const categories = ["Agenda", "Caderneta", "Planner", "KitBebê"]; // Arrays das categorias
+    const category = categories[index] || "Produto";                  // Para indice invalido
+    const includeDDP = index === 0                                    // Incluir o DDP no indice 0
 
-                <label for="codigoPedido">Digite o código do pedido:</label>
-                <input type="text" id="codigoPedido" placeholder="Ex: Agenda-001" autocomplete="off"> 
+    // Formulario
+    contact.innerHTML = `
+        <h2>Contato via WhatsApp</h2>
+        <div class="form-grid">
+            <label for="nomeCliente">Nome:</label>
+            <input type="text" id="nomeCliente" placeholder="Ex: Nome do cliente" autocomplete="off"> 
 
-                <label for="personalizacao">Personalização:</label>
-                <input type="text" id="personalizacao" placeholder="Ex: Nome da personalização" autocomplete="off"> 
+            <label for="codigoPedido">Digite o código do pedido:</label>
+            <input type="text" id="codigoPedido" placeholder="Ex: ${category}-001" autocomplete="off"> 
 
-                <label for="DPP">1DPP, 2DPP, datados e permanentes:</label>
-                <input type="text" id="DPP" placeholder="Ex: 1DPP, datados" autocomplete="off"> 
+            <label for="personalizacao">Personalização:</label>
+            <input type="text" id="personalizacao" placeholder="Ex: Nome da personalização" autocomplete="off"> 
 
-                <label for="pagamento">Pagamento:</label>
-                <input type="text" id="pagamento" placeholder="Ex: Dinheiro, cartão, pix" autocomplete="off"> 
+            ${includeDDP ? `<label for="DPP">1DPP, 2DPP, datados e permanentes:</label>
+            <input type="text" id="DPP" placeholder="Ex: 1DPP, datados" autocomplete="off">` : " "}
 
-                <p class="attention">⚠️ Envie o código do produto escolhido para agilizar o atendimento!</p>
+            <label for="pagamento">Pagamento:</label>
+            <input type="text" id="pagamento" placeholder="Ex: Dinheiro, cartão, pix" autocomplete="off"> 
 
-                <button id="btnWhats">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="whatsapp-logo-btn">
-                    Saber mais
-                </button>
-            </div>`;
-    } else if (index === 1) {
-        contact.innerHTML = `
-            <h2>Contato via WhatsApp</h2>
-            <div class="form-grid">
-                <label for="nomeCliente">Nome:</label>
-                <input type="text" id="nomeCliente" placeholder="Ex: Nome do cliente" autocomplete="off"> 
+            <p class="attention">⚠️ Envie o código do produto escolhido para agilizar o atendimento!</p>
 
-                <label for="codigoPedido">Digite o código do pedido:</label>
-                <input type="text" id="codigoPedido" placeholder="Ex: Caderneta-001" autocomplete="off"> 
-
-                <label for="personalizacao">Personalização:</label>
-                <input type="text" id="personalizacao" placeholder="Ex: Nome da personalização" autocomplete="off"> 
-
-                <label for="pagamento">Pagamento:</label>
-                <input type="text" id="pagamento" placeholder="Ex: Dinheiro, cartão, pix" autocomplete="off">
-
-                <p class="attention">⚠️ Envie o código do produto escolhido para agilizar o atendimento!</p>
-
-                <button id="btnWhats">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="whatsapp-logo-btn">
-                    Saber mais
-                </button>
-            </div>`;
-    } else if (index === 2) {
-        contact.innerHTML = `
-            <h2>Contato via WhatsApp</h2>
-            <div class="form-grid">
-                <label for="nomeCliente">Nome:</label>
-                <input type="text" id="nomeCliente" placeholder="Ex: Nome do cliente" autocomplete="off"> 
-
-                <label for="codigoPedido">Digite o código do pedido:</label>
-                <input type="text" id="codigoPedido" placeholder="Ex: Planner-001" autocomplete="off">
-                
-                <label for="personalizacao">Personalização:</label>
-                <input type="text" id="personalizacao" placeholder="Ex: Nome da personalização" autocomplete="off"> 
-
-                <label for="pagamento">Pagamento:</label>
-                <input type="text" id="pagamento" placeholder="Ex: Dinheiro, cartão, pix" autocomplete="off"> 
-
-                <p class="attention">⚠️ Envie o código do produto escolhido para agilizar o atendimento!</p>
-
-                <button id="btnWhats">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="whatsapp-logo-btn">
-                    Saber mais
-                </button>
-            </div>`;
-    } else if (index === 3) {
-        contact.innerHTML = `
-            <h2>Contato via WhatsApp</h2>
-            <div class="form-grid">
-
-                <label for="NomeCliente">Nome:</label>
-                <input type="text" id="nomeCliente" placeholder="Ex: Nome do cliente" autocomplete="off"> 
-
-                <label for="codigoPedido">Digite o código do pedido:</label>
-                <input type="text" id="codigoPedido" placeholder="Ex: kitBebê-001" autocomplete="off"> 
-
-                <label for="Personalizacao">Personalização:</label>
-                <input type="text" id="personalizacao" placeholder="Ex: Nome da personalização" autocomplete="off"> 
-
-                <label for="Pagamento">Pagamento:</label>
-                <input type="text" id="pagamento" placeholder="Ex: Dinheiro, cartão, pix" autocomplete="off"> 
-                
-                <p class="attention">⚠️ Envie o código do produto escolhido para agilizar o atendimento!</p>
-                
-                <button id="btnWhats">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="whatsapp-logo-btn">
-                    Saber mais
-                </button>
-            </div>`;
-        }
-
-    whatsAppMSG();
+            <button id="btnWhats">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="whatsapp-logo-btn">
+                Saber mais
+            </button>
+        </div>`;
+     
+    whatsAppMSG(); // Envia o formulário
 }
 
+// Gera a mensagem e envia diretamente para o whatsapp
 function whatsAppMSG() {
     const buttonWhatsapp = document.querySelector('#btnWhats');
 
     buttonWhatsapp.addEventListener('click', function () {
-        const nomeCliente = document.getElementById('nomeCliente')?.value.trim();
-        const codigo = document.getElementById('codigoPedido')?.value.trim();
-        const personalizacao = document.getElementById('personalizacao')?.value.trim();
-        const pagamento = document.getElementById('pagamento')?.value.trim();
+        // Captura dos campos
+        const username = document.getElementById('nomeCliente')?.value.trim();
+        const code = document.getElementById('codigoPedido')?.value.trim();
+        const customization = document.getElementById('personalizacao')?.value.trim();
+        const payment = document.getElementById('pagamento')?.value.trim();
         const inputDPP = document.getElementById('DPP');
         const DPP = inputDPP ? inputDPP.value.trim() : null;
 
-        // Validações obrigatórias
-        if (!nomeCliente) return alert('Por favor, digite seu nome!');
-        if (!codigo) return alert('Por favor, digite o código do pedido!');
-        if (!personalizacao) return alert('Por favor, digite a personalização!');
+        // Validações dos campos obrigatórias
+        if (!username) return alert('Por favor, digite seu nome!');
+        if (!code) return alert('Por favor, digite o código do pedido!');
+        if (!customization) return alert('Por favor, digite a personalização!');
         if (inputDPP && !DPP) return alert('Por favor, digite o DPP!');
-        if (!pagamento) return alert('Por favor, informe a forma de pagamento!');
+        if (!payment) return alert('Por favor, informe a forma de pagamento!');
         
         // criaçao da mensagem 
         const numberWhats = '5581992302347';
         let mensage = `Olá! ${time()}, tudo bem? Gostaria de saber mais informações sobre meu pedido.`;
 
-        mensage += `\n\nNome: *${nomeCliente}*`;
-        mensage += `\nCódigo do pedido: *${codigo}*`;
-        mensage += `\nPersonalização: *${personalizacao}*`;
+        mensage += `\n\nNome: *${username}*`;
+        mensage += `\nCódigo do pedido: *${code}*`;
+        mensage += `\nPersonalização: *${customization}*`;
 
         if (DPP) {
             mensage += `\nDPP: *${DPP}*`;
         }
 
-        mensage += `\nForma de pagamento: *${pagamento}*`;
+        mensage += `\nForma de pagamento: *${payment}*`;
 
+        // Criação da mensagem
         const url = `https://wa.me/${numberWhats}?text=${encodeURIComponent(mensage)}`;
         window.open(url, '_blank');
     });
 }
 
+// Saudação conforme o horário
 function time(){
     const now = new Date();
     const time = now.getHours();
