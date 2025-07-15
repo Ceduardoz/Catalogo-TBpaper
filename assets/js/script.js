@@ -51,6 +51,7 @@ function selectButton(index) {
 // Rolagem mais suave
 function scrollToImages(){
     imageSection.scrollIntoView({behavior: 'smooth'});
+    imageSection.style.padding = '100px 20px';
 }
 
 // Carrega as imagems pelo indice das categorias
