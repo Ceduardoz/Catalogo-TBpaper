@@ -143,6 +143,8 @@ function loadImages(index){
         container.appendChild(img);
         container.appendChild(caption);
         imageSection.appendChild(container);
+
+        console.log("Todas as imagens carregadas");
     });
 }
 
@@ -218,16 +220,17 @@ function whatsAppMSG() {
         const code = document.getElementById('codigoPedido')?.value.trim();
         const customization = document.getElementById('personalizacao')?.value.trim();
         const payment = document.getElementById('pagamento')?.value.trim();
-        const option = document.querySelector('input[name="option"]:checked')?.value.trim();
+        const option = document.querySelector('input[name="option"]:checked');
         const inputDPP = document.getElementById('DPP');
         const DPP = inputDPP ? inputDPP.value.trim() : null;
+        const inputOption = option ? option.value.trim() : null;
 
         // Validações dos campos obrigatórias
         if (!username) return alert('Por favor, digite seu nome!');
         if (!code) return alert('Por favor, digite o código do pedido!');
         if (!customization) return alert('Por favor, digite a personalização!');
         if (inputDPP && !DPP) return alert('Por favor, digite o DPP!');
-        if (!option) return alert('Por favor, marque a opção!'); 
+        if (option && !inputOption) return alert('Por favor, marque a opção!'); 
         if (!payment) return alert('Por favor, informe a forma de pagamento!');
         
         console.log(option);
@@ -245,6 +248,8 @@ function whatsAppMSG() {
         }
 
         mensage += `\nForma de pagamento: *${payment}*`;
+
+        console.log("Mensagem Enviada");
 
         // Criação da mensagem
         const url = `https://wa.me/${numberWhats}?text=${encodeURIComponent(mensage)}`;
