@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <a href="index.html"><img src="assets/img/LOGO.png" alt="logo" class="logo"></a>
+        <a href="index.html"><img src="assets/img/HomePage/LOGO.png" alt="logo" class="logo"></a>
         <!--Navegações-->
         <nav class="navbar" id="main-navbar">
             <ul>
@@ -25,35 +25,46 @@
         <div class="carousel">
             <div class="carousel-track">
                 <div class="slide active">
-                    <img src="assets/img/Slide01.jpg" alt="Imagem 1">
+                    <picture>
+                        <source media="(max-width: 480px)" srcset="assets/img/HomePage/" type="image/jpg">
+                        <source media="(max-width: 768px)" srcset="assets/img/HomePage/Slide01.jpg" type="image/jpg">
+                        <img src="assets/img/HomePage/Slide01G.jpg" alt="Slide01">
+                    </picture>
                 </div>
                 <div class="slide">
-                    <img src="assets/img/Slide02.jpg" alt="Imagem 2">
+                    <picture>
+                        <source media="(max-width: 480px)" srcset="assets/img/HomePage/" type="image/jpg">
+                        <source media="(max-width: 768px)" srcset="assets/img/HomePage/Slide02.jpg"
+                        type="image/jpg">
+                            <img src="assets/img/HomePage/Slide02G.jpg" alt="Slide02">
+                    </picture>
                 </div>
                 <div class="slide">
-                    <img src="assets/img/Slide03.jpg" alt="Imagem 3">
-                </div>
-                <div class="slide">
-                    <img src="assets/img/TesteOtimizaçao.jpg" alt="Imagem 4">
+                    <picture>
+                        <source media="(max-width: 480px)" srcset="assets/imgHomePage//" type="image/jpg">
+                        <source media="(max-width: 768px)" srcset="assets/imgHomePage//Slide03.jpg" type="image/jpg">
+                        <img src="assets/img/HomePage/Slide03G.jpg" alt="Slide03">
+                    </picture>
                 </div>
             </div>
         </div>
+        
         <!--Card das categorias-->
         <section class="section-panel">
             <div class="card">
-                <img src="assets/img/LOGO.png" alt="ImagemAgenda">
+                <img src="assets/img/HomePage/LOGO.png" alt="ImagemAgenda">
                 <button onclick="selectButton(0)">Agenda</button>
             </div>
             <div class="card">
-                <img src="assets/img/LOGO.png" alt="ImagemAgenda">
+                <img src="assets/img/HomePage/LOGO.png" alt="ImagemAgenda">
                 <button onclick="selectButton(1)">Caderneta</button>
             </div>
             <div class="card">
-                <img src="assets/img/LOGO.png" alt="ImagemAgenda">
+                <img src="assets/img/HomePage/LOGO.png" alt="ImagemAgenda">
                 <button onclick="selectButton(2)">Planner</button>
             </div>
             <div class="card">
-                <img src="assets/img/LOGO.png" alt="ImagemAgenda">
+                <img src="assets/img/HomePage/LOGO.png" alt="ImagemAgenda">
                 <button onclick="selectButton(3)">Kit bebê</button>
             </div>
         </section>

@@ -180,7 +180,7 @@ header{
     max-width: 250px;
 }
 
-.image-item img {
+.image-item img, source {
     width: 100%;
     border-radius: 8px;
     object-fit: cover;
@@ -350,7 +350,6 @@ footer{
     }
 
     .section-panel .card {
-        width: 280px;
         max-width: 300px;
         height: auto;
         padding: 15px;
