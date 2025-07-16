@@ -163,6 +163,11 @@ header{
     color: var(--color2--);
 }
 
+.section-panel .card button > span {
+    font-family: var(--font-main--);
+    font-size: 0.7em;
+}
+
 /*Seção de imagem (JS)*/
 .image-section {
     display: flex;
