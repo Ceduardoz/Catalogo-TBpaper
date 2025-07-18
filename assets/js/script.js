@@ -1,99 +1,14 @@
 const imageSection = document.querySelector('.image-section');
 const contact = document.querySelector('.contact');
+let dadosJSON = {};
+
+// chamando arquivos do json
+fetch("image.json")
+    .then(response => response.json())
+    .then(json => dadosJSON = json)
+    .catch(e => console.error("ERRO ao carregar o JSON!", e));
 
 carousel();
-
-// Arrays das imagens 
-const imageCards = [
-    [   // Capas || Agendas, Planner, Cadernos 
-        {src: "/assets/img/Agenda/1.jpg", code: "Capas-001"},
-        {src: "/assets/img/Agenda/2.jpg", code: "Capas-002"},
-        {src: "/assets/img/Agenda/3.jpg", code: "Capas-003"},
-        {src: "/assets/img/Agenda/4.jpg", code: "Capas-004"},
-        {src: "/assets/img/Agenda/5.jpg", code: "Capas-005"},
-        {src: "/assets/img/Agenda/6.jpg", code: "Capas-006"},
-        {src: "/assets/img/Agenda/7.jpg", code: "Capas-007"},
-        {src: "/assets/img/Agenda/8.jpg", code: "Capas-008"},
-        {src: "/assets/img/Agenda/9.jpg", code: "Capas-009"},
-        {src: "/assets/img/Agenda/10.jpg", code: "Capas-010"},
-        {src: "/assets/img/Agenda/11.jpg", code: "Capas-011"},
-        {src: "/assets/img/Agenda/12.jpg", code: "Capas-012"},
-        {src: "/assets/img/Agenda/13.jpg", code: "Capas-013"},
-        {src: "/assets/img/Agenda/14.jpg", code: "Capas-014"},
-        {src: "/assets/img/Agenda/15.jpg", code: "Capas-015"},
-        {src: "/assets/img/Agenda/16.jpg", code: "Capas-016"},
-        {src: "/assets/img/Agenda/17.jpg", code: "Capas-017"},
-        {src: "/assets/img/Agenda/18.jpg", code: "Capas-018"},
-        {src: "/assets/img/Agenda/19.jpg", code: "Capas-019"},
-        {src: "/assets/img/Agenda/20.jpg", code: "Capas-020"},
-        {src: "/assets/img/Agenda/21.jpg", code: "Capas-021"},
-        {src: "/assets/img/Agenda/22.jpg", code: "Capas-022"},
-        {src: "/assets/img/Agenda/23.jpg", code: "Capas-023"},
-        {src: "/assets/img/Agenda/24.jpg", code: "Capas-024"},
-        {src: "/assets/img/Agenda/25.jpg", code: "Capas-025"},
-        {src: "/assets/img/Agenda/26.jpg", code: "Capas-026"},
-        {src: "/assets/img/Agenda/27.jpg", code: "Capas-027"},
-        {src: "/assets/img/Agenda/28.jpg", code: "Capas-028"},
-        {src: "/assets/img/Agenda/29.jpg", code: "Capas-029"},
-        {src: "/assets/img/Agenda/30.jpg", code: "Capas-030"},
-        {src: "/assets/img/Agenda/31.jpg", code: "Capas-031"},
-        {src: "/assets/img/Agenda/32.jpg", code: "Capas-032"},
-        {src: "/assets/img/Agenda/33.jpg", code: "Capas-033"},
-        {src: "/assets/img/Agenda/34.jpg", code: "Capas-034"},
-        {src: "/assets/img/Agenda/35.jpg", code: "Capas-035"},
-        {src: "/assets/img/Agenda/36.jpg", code: "Capas-036"},
-        {src: "/assets/img/Agenda/37.jpg", code: "Capas-037"},
-        {src: "/assets/img/Agenda/38.jpg", code: "Capas-038"},
-        {src: "/assets/img/Agenda/39.jpg", code: "Capas-039"},
-        {src: "/assets/img/Agenda/40.jpg", code: "Capas-040"},
-        {src: "/assets/img/Agenda/41.jpg", code: "Capas-041"},
-        {src: "/assets/img/Agenda/42.jpg", code: "Capas-042"},
-        {src: "/assets/img/Agenda/43.jpg", code: "Capas-043"},
-        {src: "/assets/img/Agenda/44.jpg", code: "Capas-044"},
-        {src: "/assets/img/Agenda/45.jpg", code: "Capas-045"},
-        {src: "/assets/img/Agenda/46.jpg", code: "Capas-046"},
-        {src: "/assets/img/Agenda/47.jpg", code: "Capas-047"},
-        {src: "/assets/img/Agenda/48.jpg", code: "Capas-048"},
-        {src: "/assets/img/Agenda/49.jpg", code: "Capas-049"},
-        {src: "/assets/img/Agenda/50.jpg", code: "Capas-050"},
-        {src: "/assets/img/Agenda/51.jpg", code: "Capas-051"},
-        {src: "/assets/img/Agenda/52.jpg", code: "Capas-052"},
-        {src: "/assets/img/Agenda/53.jpg", code: "Capas-053"},
-        {src: "/assets/img/Agenda/54.jpg", code: "Capas-054"},
-        {src: "/assets/img/Agenda/55.jpg", code: "Capas-055"},
-        {src: "/assets/img/Agenda/56.jpg", code: "Capas-056"},
-        {src: "/assets/img/Agenda/57.jpg", code: "Capas-057"},
-        {src: "/assets/img/Agenda/58.jpg", code: "Capas-058"},
-        {src: "/assets/img/Agenda/59.jpg", code: "Capas-059"},
-        {src: "/assets/img/Agenda/60.jpg", code: "Capas-060"},
-        {src: "/assets/img/Agenda/61.jpg", code: "Capas-061"},
-        {src: "/assets/img/Agenda/62.jpg", code: "Capas-062"},
-        {src: "/assets/img/Agenda/63.jpg", code: "Capas-063"},
-        {src: "/assets/img/Agenda/64.jpg", code: "Capas-064"},
-        {src: "/assets/img/Agenda/65.jpg", code: "Capas-065"},
-        {src: "/assets/img/Agenda/66.jpg", code: "Capas-066"},
-        {src: "/assets/img/Agenda/67.jpg", code: "Capas-067"},
-        {src: "/assets/img/Agenda/68.jpg", code: "Capas-068"},
-        {src: "/assets/img/Agenda/69.jpg", code: "Capas-069"},
-        {src: "/assets/img/Agenda/70.jpg", code: "Capas-070"},
-
-    ],
-    [   // Caderneta de Saúde
-        {src: "/assets/img/TesteOtimizaçao.jpg", code: "CadernetaSaude-001"},
-        {src: "/assets/img/TesteOtimizaçao.jpg", code: "CadernetaSaude-002"},
-        {src: "/assets/img/TesteOtimizaçao.jpg", code: "CadernetaSaude-003"},
-    ],
-    [   // Agenda Escolar
-        {src: "/assets/img/TesteOtimizaçao.jpg", code: "AgendaEscolar-001"},
-        {src: "/assets/img/TesteOtimizaçao.jpg", code: "AgendaEscolar-002"},
-        {src: "/assets/img/TesteOtimizaçao.jpg", code: "AgendaEscolar-003"},
-    ],
-    [    // Kit Bebê
-        {src: "/assets/img/TesteOtimizaçao.jpg", code: "KitBebê-004"},
-        {src: "/assets/img/TesteOtimizaçao.jpg", code: "KitBebê-005"},
-        {src: "/assets/img/TesteOtimizaçao.jpg", code: "KitBebê-006"},
-    ]
-];
 
 // Carrossel automatico das imagens
 function carousel(){
@@ -110,9 +25,10 @@ function carousel(){
 //Seleciona botão das categorias
 function selectButton(index) {
     currentButton = index;
-
+    const images = dadosJSON[currentButton] || [];
+    
     scrollToImages();            // Rola até a section das imagens
-    loadImages(currentButton);   // Carrega as imagens por Lazyloading
+    loadImages(images);   // Carrega as imagens por Lazyloading
     contactForms(currentButton); // Formulário Personalizado
 }
 
@@ -123,29 +39,27 @@ function scrollToImages(){
 }
 
 // Carrega as imagems pelo indice das categorias
-function loadImages(index){
+function loadImages(images){
     imageSection.innerHTML = " ";
-    const images = imageCards[index] || [];
 
     // Criação da div de cada imagem
-    images.forEach(({src, code}) => {
+    for (const image of images) {
         const container = document.createElement('div');
         container.classList.add('image-item');
 
         const img = document.createElement('img');
-        img.loading = 'lazy';
-        img.src = src;
-        img.alt = code;
+        img.src = image.src;
+        img.alt = image.code;
 
         const caption = document.createElement('p');
-        caption.innerHTML = `Código: <strong>${code}</strong>`;
+        caption.innerHTML = `Código: <strong>${image.code}</strong>`;
 
         container.appendChild(img);
         container.appendChild(caption);
         imageSection.appendChild(container);
 
         console.log("Todas as imagens carregadas");
-    });
+    };
 }
 
 // Formulário personalizado de acordo com a categoria
@@ -199,13 +113,9 @@ function placeholderMSG(){
 
     radios.forEach(radio => {
         radio.addEventListener('change', () => {
-            if (radio.value === 'Agenda') {
-                dppInput.placeholder = 'Ex: 1DPP ou 2DDP, datado ou permanentes ';
-            } else if (radio.value === 'Planer') {
-                dppInput.placeholder = 'Ex: Planner Vertical ou Planner Horizontal';
-            } else if (radio.value === 'Cadernos') {
-                dppInput.placeholder = 'Ex: Cadernos';
-            }
+            if (radio.value === 'Agenda') dppInput.placeholder = 'Ex: 1DPP ou 2DDP, datado ou permanentes ';
+            if (radio.value === 'Planer') dppInput.placeholder = 'Ex: Planner Vertical ou Planner Horizontal';
+            if (radio.value === 'Cadernos') dppInput.placeholder = 'Ex: Cadernos';
         });
     });
 }
