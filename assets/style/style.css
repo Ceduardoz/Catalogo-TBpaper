@@ -349,9 +349,12 @@ footer{
 
 
     .section-panel {
-        padding-top: 130px; 
-        flex-direction: column;
+        padding-top: 130px;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
         height: auto;
+        flex-wrap: wrap;
     }
 
     .section-panel .card {
