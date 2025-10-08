@@ -147,10 +147,5 @@
         {"src": "/assets/img/TesteOtimizaçao.jpg", "code": "AgendaEscolar-001"},
         {"src": "/assets/img/TesteOtimizaçao.jpg", "code": "AgendaEscolar-002"},
         {"src": "/assets/img/TesteOtimizaçao.jpg", "code": "AgendaEscolar-003"}
-  ],
-  "3": [ 
-        {"src": "/assets/img/TesteOtimizaçao.jpg", "code": "KitBebê-004"},
-        {"src": "/assets/img/TesteOtimizaçao.jpg", "code": "KitBebê-005"},
-        {"src": "/assets/img/TesteOtimizaçao.jpg", "code": "KitBebê-006"}
   ]
 }

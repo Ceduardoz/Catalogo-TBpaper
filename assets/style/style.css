@@ -304,19 +304,9 @@ footer{
         justify-content: center; 
         padding: 10px 20px;
     }
-
     
     .navbar {
         display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100px;
-        left: 0;
-        width: 100%;
-        background-color: var(--color2--);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        padding: 20px 0;
-        z-index: 999;
     }
 
     
@@ -347,6 +337,9 @@ footer{
         object-fit: cover;
     }
 
+    .carousel{
+        display: none;
+    }
 
     .section-panel {
         padding-top: 130px;
@@ -361,6 +354,7 @@ footer{
         max-width: 300px;
         height: auto;
         padding: 15px;
+        margin-top: 40px;
     }
 
     .section-panel .card img {
