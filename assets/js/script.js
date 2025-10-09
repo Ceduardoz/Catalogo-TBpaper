@@ -148,7 +148,7 @@ function whatsAppMSG() {
         if (inputDPP && !DPP) return alert('Por favor, digite o DPP!');
         if (!payment) return alert('Por favor, informe a forma de pagamento!');
 
-        const numberWhats = '5581992302347';
+        const numberWhats = '5581991983395';
         let mensage = `Olá! ${time()}, tudo bem? Gostaria de saber mais informações sobre meu pedido.`;
 
         mensage += `\n\nNome: *${username}*`;
